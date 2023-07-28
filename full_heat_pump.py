@@ -58,8 +58,8 @@ corresponding condensation pressure"""
 
     # key design parameter
     cons.set_attr(Q=-230e3)
-    #nw.solve("design")
-    #nw.print_results()
+    nw.solve("design")
+    nw.print_results()
     #ploting(nw)
     return nw, c1, cd, c0, p_cond
 
@@ -207,4 +207,4 @@ if __name__ =='__main__':
     # only c1 and cd because c1 is connection to new element. cd is component connected by c1 to the new element. c0 for the element after valve and eva
     nw, c6, c17, su, c0, cd, c1, c5, p_cond = valve_and_eva_element(nw, working_fluid, c1, cd, c0, p_cond)
     # (c6, c17 --> su) and (c0 --> cd) and (c1, c5 for pressure values)
-    # compressor_element(nw, working_fluid,c6, c17, su, c0, cd, c1, c5, p_cond)
+    compressor_element(nw, working_fluid,c6, c17, su, c0, cd, c1, c5, p_cond)
